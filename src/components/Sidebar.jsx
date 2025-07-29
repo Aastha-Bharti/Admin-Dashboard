@@ -160,20 +160,24 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
         </nav>
 
         {/* user profile */}
-        <div className='p-4 border-t border-slate-200/50 dark:border-slate-700/50'>
-            <div className='flex items-center space-x-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50'>
-            <div className='w-8 h-8 rounded-full ring-1 ring-blue-500 flex items-center justify-center'>
-                <FaRegUser className='w-4 h-4 text-slate-700 dark:text-white'/>
-            </div>
-        
-            <div className='flex-1 min-w-0'>
-                <div className='flex-1 min-w-0'>
-                    <p className='text-sm font-medium text-slate-800 dark:text-white truncate'> Pam Johnson</p>
-                    <p className='text-xs text-slate-500 dark:text-slate-400'>Administrator</p>
+            <div className=" p-3 border-t border-slate-200/50 dark:border-slate-700/50">
+            <div className={`flex items-center space-x-3 p-2 rounded-xl transition-all duration-200 
+                ${collapsed ? 'justify-center' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+                
+                {/* Avatar */}
+                <div className="w-9 h-9 rounded-full ring-1 ring-blue-500 flex items-center justify-center bg-white/60 dark:bg-slate-900/60">
+                <FaRegUser className="w-4 h-4 text-slate-700 dark:text-white" />
                 </div>
+
+                {/* Profile info */}
+                {!collapsed && (
+                <div className="flex flex-col min-w-0">
+                    <p className="text-sm font-medium text-slate-800 dark:text-white truncate">Pam Johnson</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Administrator</p>
+                </div>
+                )}
             </div>
             </div>
-        </div>
     </div>
   )
 }
