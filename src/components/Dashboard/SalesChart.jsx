@@ -16,7 +16,7 @@ const SalesChart = () => {
             <p className='text-sm text-slate-600 dark:text-slate-400'>Production Distribution</p>
         </div>
 
-        <div className='h-48'>
+        <div className='h-42'>
             {/* Chart will go here */}
             <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
@@ -29,7 +29,6 @@ const SalesChart = () => {
                         outerRadius={80}
                         paddingAngle={5}
                         fill="#8884d8"
-                        label
                     >
                         {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
@@ -44,11 +43,22 @@ const SalesChart = () => {
                     }} />
                 </PieChart>
             </ResponsiveContainer>
+         </div>
 
-            {/* <div className='space-y-2 '>
+          <div className='space-y-1'>
+                {data.map((item, index) => (
+                    <div key={index} className='flex items-center justify-between '>
+                        <div className='space-x-2 flex items-center'>
+                            <div className='w-3 h-3 rounded-full' style={{ backgroundColor: item.color }}></div>
+                            <span className='text-sm text-slate-600 dark:text-slate-400'>{item.name}</span>
+                        </div>
 
-            </div> */}
-        </div>
+                        <div>
+                            <span className='text-sm font-medium text-slate-800 dark:text-slate-200'>{item.value}%</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
     </div>
   )
 }
