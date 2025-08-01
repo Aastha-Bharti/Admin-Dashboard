@@ -91,9 +91,9 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
     }
 
     return (
-    <div className={`${collapsed ? 'w-20' : 'w-72'} transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-200/50 dark:border-slate-700/50 flex flex-col relative z-10`}>
+    <div className={`${collapsed ? 'w-20' : 'w-72'} transition-all duration-300 ease-in-out bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-slate-500/20 dark:border-slate-700/50 flex flex-col relative z-10`}>
         {/* logo */}
-        <div className='p-4 border-b border-slate-200/50 dark:border-slate-700/50 '>
+        <div className='p-4 border-b border-slate-500/20 dark:border-slate-700/50 '>
             <div className='flex items-center space-x-3'>
                 <div className='w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg'>
                     <Zap className='w-6 h-6 text-white'/>
@@ -126,11 +126,11 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
                             }
                         }}>
                         <div className='flex items-center space-x-3'>
-                            <item.icon className={`w-5 h-5 text-white`} />
+                            <item.icon className={`w-5 h-5 text-slate-700 dark:text-white`} />
                             
                             { !collapsed && (
                             <>
-                                <span className='text-s font-light ml-2 text-slate-800 dark:text-white'>{item.label}</span>
+                                <span className='text-s font-light ml-2 text-black dark:text-white'>{item.label}</span>
                                 { item.badge && (
                                 <span className='px-2 py-1 text-xs bg-red-500 text-white rounded-full'>{item.badge}</span>
                             )}
@@ -143,13 +143,13 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
                         
 
                         </div>
-                        { !collapsed && item.submenu && <ChevronDown className='w-5 h-5 text-white transition-transform' />}
+                        { !collapsed && item.submenu && <ChevronDown className='w-5 h-5 dark:text-white text-slate-600 transition-transform' />}
                     </button>
                     {/* sub-menus */}
                     { !collapsed && item.submenu && expandedItems.has(item.id) && (
-                        <div className='ml-8 mt-2 space-y-1 text-black dark:text-slate-200 font-light text-s'>
+                        <div className='ml-8 mt-2 space-y-1 font-light text-s'>
                         {item.submenu.map( (subitem) => (
-                            <button className='text-sm w-full text-left p-2 text-slate-200 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all '>{subitem.label}</button>
+                            <button className='text-sm w-full  text-left p-2 text-slate-700 dark:text-slate-400 hover:text-black dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg transition-all '>{subitem.label}</button>
                         )) }
                     </div>
                 )}
@@ -160,12 +160,12 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
         </nav>
 
         {/* user profile */}
-            <div className=" p-3 border-t border-slate-200/50 dark:border-slate-700/50">
+            <div className=" p-3 border-t border-slate-500/20 dark:border-slate-700/50">
             <div className={`flex items-center space-x-3 p-2 rounded-xl transition-all duration-200 
-                ${collapsed ? 'justify-center' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+                ${collapsed ? 'justify-center' : 'bg-slate-100 dark:bg-slate-800/50'}`}>
                 
                 {/* Avatar */}
-                <div className="w-9 h-9 rounded-full ring-1 ring-blue-500 flex items-center justify-center bg-white/60 dark:bg-slate-900/60">
+                <div className="w-9 h-9 rounded-full ring-1 ring-blue-500 flex items-center justify-center bg-slate-200 dark:bg-slate-900/60">
                 <FaRegUser className="w-4 h-4 text-slate-700 dark:text-white" />
                 </div>
 

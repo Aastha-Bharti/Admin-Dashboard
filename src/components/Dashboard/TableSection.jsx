@@ -75,9 +75,9 @@ const TableSection = () => {
             case 'Pending':
                 return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400';
             case 'Completed':
-                return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
+                return 'bg-green-200 text-green-700 dark:bg-green-900/30 dark:text-emerald-400';
             case 'Cancelled':
-                return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400';
+                return 'bg-red-300 text-red-500 dark:bg-red-900/30 dark:text-red-400';
             default:
                 return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
         }
@@ -86,8 +86,8 @@ const TableSection = () => {
   return (
     <div className='space-y-6'>
         {/* recent orders */}
-        <div className='bg-white/80 dark:bg-gray-900/80 shadow rounded-lg p-6 backdrop-blur-lg overflow-hidden border border-slate-200/50 dark:border-slate-700/50 rounded-b-2xl'>
-        <div className='p-5 border-b border-slate-200/50 dark:border-slate-700/50'>
+        <div className='bg-white/80 dark:bg-gray-900/80 shadow rounded-lg p-6 backdrop-blur-lg overflow-hidden border border-slate-500/20 dark:border-slate-700/50 rounded-b-2xl'>
+        <div className='p-5 border-b border-slate-500/20 dark:border-slate-700/50'>
             <div className='flex items-center justify-between'>
                 <div>
                     <h3 className='text-lg font-bold text-slate-800 dark:text-white'>Recent Orders</h3>
@@ -155,7 +155,7 @@ const TableSection = () => {
                             </td>
 
                             <td className='p-4'>
-                                <span className={`text-slate-400 dark:text-slate-300 text-xs py-1 px-2 rounded-full 
+                                <span className={` text-xs py-1 px-2 rounded-full 
                                     ${getStatusColor(order.status)}`}>
                                     {order.status}
                                 </span>
@@ -182,7 +182,7 @@ const TableSection = () => {
         </div>
 
         {/* Top Products */}
-        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur rounded-2xl border border-slate-200/50 dark:border-slate-700/50 overflow-hidden'>
+        <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur shadow-lg rounded-2xl border border-slate-200/50 dark:border-slate-700/50 overflow-hidden'>
             <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
                 <div className='flex items-center justify-between'>
                     <div className='text-lg font-bold text-slate-800 dark:text-white ml-5'>
@@ -204,7 +204,7 @@ const TableSection = () => {
                         return <div className='flex items-center justify-around p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors'>
                     <div className='flex-1'>
                         <h4 className='text-sm font-semibold text-slate-800 dark:text-white'>{product.name}</h4>
-                        <p className='text-sm text-slate-500 dark:text-slate-400'>{product.sales}</p>
+                        <p className='text-sm text-slate-500 dark:text-slate-400'>Sales : {product.sales}</p>
                     </div>
                     <div className='text-right'> 
                         <p className='text-sm font-semibold text-slate-800 dark:text-white'>{product.revenue}</p>

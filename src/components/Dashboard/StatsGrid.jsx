@@ -50,7 +50,7 @@ const StatsGrid = () => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
       {stats.map( (stats,index) => {
-        return <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl hover:shadow-slate-200/20 dark:hover:shadow-slate-500/20 transition-all duration-300 group key={index}>'>
+        return <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-6 border border-slate-500/20 dark:border-slate-700/50 hover:shadow-lg shadow-lg hover:shadow-slate-200/20 dark:hover:shadow-slate-500/20 transition-all duration-300 group key={index}>'>
       <div className='flex items-start justify-between'>
         <div className='flex-1'>
           <p className='text-sm font-medium text-slate-600 dark:text-slate-400'>{stats.title}</p>

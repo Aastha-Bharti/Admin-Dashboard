@@ -1,13 +1,14 @@
-import { Bell, ChevronDown, Filter, Menu, Plus, Search, Settings, Sun } from "lucide-react"
+import { Bell, ChevronDown, Filter, Menu, Plus, Search, Settings } from "lucide-react"
 import { FaRegUser } from "react-icons/fa6";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = ({ sideBarCollapsed, onToggleSideBar }) => {
   return (
-    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-700/50 px-6 py-3">
+    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-500/20 dark:border-slate-700/50 px-6 py-3">
       <div className="flex items-center justify-between">
         {/* left section */}
         <div className="flex items-center space-x-4">
-          <button className="p-2 rounded-lg text-slate-300 dark:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          <button className="p-2 rounded-lg text-slate-300 dark:text-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
           onClick={onToggleSideBar}>
             <Menu className="w-5 h-5"/>
           </button>
@@ -38,8 +39,8 @@ const Header = ({ sideBarCollapsed, onToggleSideBar }) => {
           </button>
 
           {/* toggle */}
-          <button className="p-1.5 rounded-lg text-slate-600 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-            <Sun className="w-5 h-5" />
+          <button className="p-1.5 rounded-lg text-slate-600 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors ">
+            <ThemeToggle />
           </button>
 
           {/* notification */}
@@ -59,7 +60,7 @@ const Header = ({ sideBarCollapsed, onToggleSideBar }) => {
                 <FaRegUser className='w-5 h-5 text-slate-700 dark:text-white'/>
             </div>
           <div className="hidden md:block ">
-            <p className="text-sm font-medium text-slate-500 dark:text-slate-300">Pam Johnson</p>
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-300">Pam Johnson</p>
             <p className="text-xs text-slate-500 dark:text-slate-400">Administrator</p>
           </div>
 
