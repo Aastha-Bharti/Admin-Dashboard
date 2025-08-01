@@ -37,8 +37,6 @@ A modern, responsive, and theme-aware Admin Dashboard built using **React**, **T
 
 ## 🧠 Learnings
 
--Building responsive layouts with Tailwind
-
--Integrating real-time data visualizations with Recharts
-
--Handling theme switching and UI state globally
+- Learned how to build fully responsive layouts using **Tailwind CSS** utility classes.
+- Integrated dynamic and real-time data visualizations using **Recharts**.
+- Implemented global **dark/light theme switching** and managed UI state efficiently.
