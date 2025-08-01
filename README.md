@@ -1,12 +1,42 @@
-# React + Vite
+# 🧑‍💼 React Admin Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and theme-aware Admin Dashboard built using **React**, **Tailwind CSS**, and **Lucide React** icons. It displays recent orders, top product performance, and dynamic styling for statuses and trends.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 Interactive Charts & Graphs (Recharts) 
+- 🌗 Light & Dark mode support using Tailwind's `dark` class  
+- 📊 Dashboard sections:
+  - Recent Orders table with dynamic status badges
+  - Top Products panel with sales, revenue, and trend indicators
+- 🎨 Clean UI with modern gradients, hover effects, and utility-first styling
+- 🔧 Easily extendable and component-based structure
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**
+- **Tailwind CSS**
+- **Lucide React** for icons
+- **Recharts** – For graphs and charting
+- **Vite** 
+
+<h3 align="center">Dashboard Preview</h3>
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Light Mode</strong><br>
+      <img src="./screenshots/dashboard-light.png" width="300"/>
+    </td>
+    <td align="center">
+      <strong>Dark Mode</strong><br>
+      <img src="./screenshots/Dashboard-dark.png" width="300"/>
+    </td>
+  </tr>
+</table>
+
+## 🧠 Learnings
+
+-Building responsive layouts with Tailwind
+-Integrating real-time data visualizations with Recharts
+-Handling theme switching and UI state globally
