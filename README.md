@@ -20,7 +20,7 @@ A modern, responsive, and theme-aware Admin Dashboard built using **React**, **T
 - **Recharts** – For graphs and charting
 - **Vite** 
 
-<h3 align="center">Dashboard Preview</h3>
+### 💻 Dashboard Preview
 
 <table>
   <tr>
