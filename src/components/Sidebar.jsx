@@ -1,3 +1,5 @@
+
+
 import {
   BarChart3,
   Calendar,
@@ -52,7 +54,6 @@ const menuItems = [
   { id: "transactions", icon: CreditCard, label: "Transactions" },
   { id: "messages", icon: MessagesSquare, label: "Messages", badge: "12" },
   { id: "calendar", icon: Calendar, label: "Calendar" },
-  { id: "reports", icon: FileText, label: "Reports" },
   { id: "settings", icon: Settings, label: "Settings" },
 ];
 
@@ -69,7 +70,11 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
 
   return (
     <div
-      className={`${collapsed ? "w-[5.5rem] hidden sm:flex transition-all duration-500 ease-in-out  flex-col relative z-10" : "w-72 transition-[width] duration-500 ease-in-out flex flex-col relative z-10"} `}
+      className={`
+        flex flex-col relative z-10
+        transition-[width] duration-500 ease-in-out
+        ${collapsed ? "w-[5.5rem]" : "w-72"}
+      `}
       style={{
         backgroundColor: "var(--sidebar)",
         borderRight: "1px solid var(--sidebar-border)",
@@ -82,7 +87,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
       >
         <div className="flex items-center space-x-3">
           <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg"
+            className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
             style={{ backgroundColor: "var(--sidebar-primary)" }}
           >
             <Zap
@@ -91,10 +96,12 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
             />
           </div>
 
+          {/* Brand text – smoothly fade & shrink */}
           <div
-            className={`transition-all ease-in-out duration-500 overflow-hidden ${
-              collapsed ? "opacity-0 w-0" : "opacity-100 w-auto"
-            }`}
+            className={`
+              transition-[width,opacity] duration-500 ease-in-out overflow-hidden
+              ${collapsed ? "w-0 opacity-0" : "w-auto opacity-100"}
+            `}
           >
             <h1
               className="text-xl font-bold"
@@ -142,7 +149,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
               >
                 <div className="flex items-center space-x-3">
                   <item.icon
-                    className={`w-5 h-5 transition-colors duration-300`}
+                    className="w-5 h-5 transition-colors duration-300 flex-shrink-0"
                     style={
                       isActive
                         ? { color: "var(--sidebar-primary-foreground)" }
@@ -152,12 +159,14 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
 
                   {/* Label fade */}
                   <div
-                    className={`flex items-center space-x-2 transition-all duration-500 overflow-hidden ${
-                      collapsed ? "opacity-0 w-0" : "opacity-100 w-auto"
-                    }`}
+                    className={`
+                      flex items-center space-x-2
+                      transition-[width,opacity] duration-500 ease-in-out overflow-hidden
+                      ${collapsed ? "w-0 opacity-0" : "w-auto opacity-100"}
+                    `}
                   >
                     <span
-                      className="text-sm font-light"
+                      className="text-sm font-light whitespace-nowrap"
                       style={{
                         color: isActive
                           ? "var(--sidebar-primary-foreground)"
@@ -169,7 +178,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
 
                     {item.badge && (
                       <span
-                        className="px-2 py-0.5 text-xs text-white rounded-full"
+                        className="px-2 py-0.5 text-xs text-white rounded-full whitespace-nowrap"
                         style={{ backgroundColor: "var(--destructive)" }}
                       >
                         {item.badge}
@@ -177,7 +186,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
                     )}
                     {item.count && (
                       <span
-                        className="px-2 py-0.5 text-xs rounded-full"
+                        className="px-2 py-0.5 text-xs rounded-full whitespace-nowrap"
                         style={{
                           backgroundColor: "var(--sidebar-accent)",
                           color: "var(--sidebar-accent-foreground)",
@@ -202,11 +211,15 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
 
               {/* Submenu with smooth expand */}
               <div
-                className={`ml-8 overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
-                  expanded && !collapsed
-                    ? "max-h-40 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
+                className={`
+                  ml-8 overflow-hidden
+                  transition-[max-height,opacity] duration-500 ease-in-out
+                  ${
+                    expanded && !collapsed
+                      ? "max-h-40 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }
+                `}
               >
                 {item.submenu &&
                   item.submenu.map((subitem) => {
@@ -252,7 +265,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
           style={collapsed ? {} : { backgroundColor: "var(--sidebar-accent)" }}
         >
           <div
-            className="w-9 h-9 rounded-full flex items-center justify-center"
+            className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
             style={{
               backgroundColor: "var(--secondary)",
               border: "1px solid var(--sidebar-ring)",
@@ -265,17 +278,17 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
           </div>
 
           <div
-            className={`transition-all duration-500 overflow-hidden ${
-              collapsed ? "opacity-0 w-0" : "opacity-100 w-auto"
+            className={`transition-[width,opacity] duration-500 overflow-hidden ${
+              collapsed ? "w-0 opacity-0" : "w-auto opacity-100"
             }`}
           >
             <p
-              className="text-sm font-medium truncate"
-              style={{ color: "var(--sidebar-foreground)" }}
+              className="text-sm font-medium truncate text-neutral-900 dark:text-neutral-100"
+             
             >
               Pam Johnson
             </p>
-            <p className="text-xs" style={{ color: "var(--muted-foreground)" }}>
+            <p className="text-xs text-[var(--secondary)] dark:text-neutral-900/70 " >
               Administrator
             </p>
           </div>
