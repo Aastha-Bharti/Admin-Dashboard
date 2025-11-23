@@ -2,18 +2,26 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts'
 
 const SalesChart = () => {
 
+    const chartColors = [
+        'var(--chart-1)',
+        'var(--chart-2)',
+        'var(--chart-3)',
+        'var(--chart-4)',
+        'var(--chart-5)'
+    ]
+
     const data = [
-        { name : 'Electronics' , value : 45 , color : '#3b82f6' },
-        { name : 'Clothing' , value :  30, color : '#8b5cf6'},
-        { name : 'Books' , value :  15, color : '#10b981' },
-        { name : 'Home & Kitchen' , value : 10, color : '#f59e0b' }
+        { name : 'Electronics' , value : 45 },
+        { name : 'Clothing' , value :  30 },
+        { name : 'Books' , value :  15 },
+        { name : 'Home & Kitchen' , value : 10 }
     ]
 
   return (
-    <div className='bg-white dark:bg-slate-900/80 backdrop-blur-xl rounded-b-2xl border border-slate-200/50 dark:border-slate-700/50 p-6 shadow-lg'>
+    <div className='backdrop-blur-xl rounded-b-2xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='mb-4'>
-            <h3 className='text-xl font-bold text-slate-800 dark:text-white'>Sales by Category</h3>
-            <p className='text-sm text-slate-600 dark:text-slate-400'>Production Distribution</p>
+            <h3 className='text-xl font-bold' style={{ color: 'var(--foreground)' }}>Sales by Category</h3>
+            <p className='text-sm' style={{ color: 'var(--muted-foreground)' }}>Production Distribution</p>
         </div>
 
         <div className='h-42'>
@@ -31,30 +39,32 @@ const SalesChart = () => {
                         fill="#8884d8"
                     >
                         {data.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color} />
+                            <Cell key={`cell-${index}`} fill={chartColors[index]} />
                         ))}
                     </Pie>
                     <Tooltip 
                     contentStyle={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', 
-                        border: 'none',
+                        backgroundColor: 'var(--card)', 
+                        border: '1px solid var(--border)',
                         borderRadius: '12px',
-                        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)'
-                    }} />
+                        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                        color: 'var(--foreground)'
+                    }}
+                    itemStyle={{ color: 'var(--foreground)' }} />
                 </PieChart>
             </ResponsiveContainer>
          </div>
 
           <div className='space-y-1'>
                 {data.map((item, index) => (
-                    <div key={index} className='flex items-center justify-between '>
+                    <div key={index} className='flex items-center justify-between'>
                         <div className='space-x-2 flex items-center'>
-                            <div className='w-3 h-3 rounded-full' style={{ backgroundColor: item.color }}></div>
-                            <span className='text-sm text-slate-600 dark:text-slate-400'>{item.name}</span>
+                            <div className='w-3 h-3 rounded-full' style={{ backgroundColor: chartColors[index] }}></div>
+                            <span className='text-sm' style={{ color: 'var(--muted-foreground)' }}>{item.name}</span>
                         </div>
 
                         <div>
-                            <span className='text-sm font-medium text-slate-800 dark:text-slate-200'>{item.value}%</span>
+                            <span className='text-sm font-medium' style={{ color: 'var(--foreground)' }}>{item.value}%</span>
                         </div>
                     </div>
                 ))}

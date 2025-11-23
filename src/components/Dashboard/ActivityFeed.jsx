@@ -8,8 +8,8 @@ const activities = [
         title: "New User Registered",
         description: "John Smith created an account",
         time: "2 minutes ago",
-        color: "text-blue-500",
-        bgColor: "bg-blue-100 dark:bg-blue-900/30",
+        color: "var(--chart-1)",
+        bgColor: "var(--secondary)",
     },
     {
         id: 2,
@@ -18,8 +18,8 @@ const activities = [
         title: "New order received",
         description: "Order #3847 for $2,399",
         time: "5 minutes ago",
-        color: "text-emerald-500",
-        bgColor: "bg-emerald-100 dark:bg-emerald-900/30",
+        color: "var(--chart-2)",
+        bgColor: "var(--secondary)",
     },
     {
         id: 3,
@@ -28,8 +28,8 @@ const activities = [
         title: "Payment processed",
         description: "Payment of $1,299 completed",
         time: "12 minutes ago",
-        color: "text-purple-500",
-        bgColor: "bg-purple-100 dark:bg-purple-900/30",
+        color: "var(--chart-3)",
+        bgColor: "var(--secondary)",
     },
     
     {
@@ -39,8 +39,8 @@ const activities = [
         title: "New User Registered",
         description: "Database backup completed",
         time: "1 hour ago",
-        color: "text-orange-500",
-        bgColor: "bg-orange-100 dark:bg-orange-900/30",
+        color: "var(--chart-4)",
+        bgColor: "var(--secondary)",
     },
     {
         id: 5,
@@ -49,35 +49,35 @@ const activities = [
         title: "Low Stock Alert",
         description: "iPhone 15 Pro stock is low",
         time: "2 hours ago",
-        color: "text-red-500",
-        bgColor: "bg-red-100 dark:bg-red-900/30",
+        color: "var(--destructive)",
+        bgColor: "var(--secondary)",
     },
 
 ]
 
 const ActivityFeed = () => {
   return (
-    <div className='bg-white dark:bg-slate-900/80 backdrop-blur-xl shadow-lg rounded-b-2xl border border-slate-200/50 dark:border-slate-700/50'>
-        <div className='p-6 border-b border-slate-200/50 dark:border-slate-700/50'>
+    <div className='backdrop-blur-xl shadow-lg rounded-b-2xl' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
+        <div className='p-6' style={{ borderBottom: '1px solid var(--border)' }}>
             <div>
-                <h3 className='text-lg font-black text-slate-800 dark:text-white'>ActivityFeed</h3>
-                <p className='text-sm text-slate-500 dark:text-slate-400'>Recent System Activities </p>
+                <h3 className='text-lg font-black' style={{ color: 'var(--foreground)' }}>ActivityFeed</h3>
+                <p className='text-sm' style={{ color: 'var(--muted-foreground)' }}>Recent System Activities </p>
             </div>
-            <button className='text-sm font-medium text-blue-600 hover:text-blue-700'>View All</button>
+            <button className='text-sm font-medium hover:opacity-80 transition-opacity' style={{ color: 'var(--primary)' }}>View All</button>
         </div>
         <div className='p-6'>
             <div className='space-y-4'>
                 {activities.map((activity) => {
-                    return <div className='flex items-start p-3 space-x-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors'>
-                <div className={`p-2 rounded-lg ${activity.bgColor}`}>
-                    <activity.icon className={`w-4 h-4 ${activity.color}`} />
+                    return <div key={activity.id} className='flex items-start p-3 space-x-4 rounded-xl hover:opacity-80 transition-opacity' style={{ backgroundColor: 'transparent' }}>
+                <div className='p-2 rounded-lg' style={{ backgroundColor: activity.bgColor }}>
+                    <activity.icon className='w-4 h-4' style={{ color: activity.color }} />
                 </div>
                 <div className='flex-1 min-w-0'>
-                    <h4 className='text-sm font-semibold text-slate-800 dark:text-white'>{activity.title}</h4>
-                    <p className='text-sm text-slate-600 dark:text-slate-400 truncate'>{activity.description}</p>
+                    <h4 className='text-sm font-semibold' style={{ color: 'var(--foreground)' }}>{activity.title}</h4>
+                    <p className='text-sm truncate' style={{ color: 'var(--muted-foreground)' }}>{activity.description}</p>
                     <div className='flex items-center space-x-1 mt-1'>
-                        <Clock className='w-3 h-3 text-slate-400'/>
-                        <span className='text-xs text-slate-500 dark:text-slate-400'>{activity.time}</span>
+                        <Clock className='w-3 h-3' style={{ color: 'var(--muted-foreground)' }}/>
+                        <span className='text-xs' style={{ color: 'var(--muted-foreground)' }}>{activity.time}</span>
                     </div>
                 </div>
                 </div>

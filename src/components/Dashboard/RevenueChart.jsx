@@ -19,23 +19,23 @@ const RevenueChart = () => {
 
 
   return (
-    <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-b-2xl border border-slate-500/20 dark:border-slate-700/50 p-6  shadow-lg'>
+    <div className='backdrop-blur-xl rounded-b-2xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='flex items-center justify-between mb-6'>
-            <div >
-                <h3 className='text-xl font-bold text-slate-800 dark:text-white'>Revenue Chart</h3>
-                <p className='text-sm text-slate-600 dark:text-slate-400'>Monthly Revenue and Expenses</p>
+            <div>
+                <h3 className='text-xl font-bold' style={{ color: 'var(--foreground)' }}>Revenue Chart</h3>
+                <p className='text-sm' style={{ color: 'var(--muted-foreground)' }}>Monthly Revenue and Expenses</p>
             </div>
             <div className='flex items-center space-x-4'>
                 <div className='flex items-center space-x-2'>
-                    <div className='w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full'></div>
-                    <div className='text-sm text-slate-600 dark:text-slate-400'>
+                    <div className='w-3 h-3 rounded-full' style={{ backgroundColor: 'var(--chart-1)' }}></div>
+                    <div className='text-sm' style={{ color: 'var(--muted-foreground)' }}>
                         <span>Revenue </span>
                     </div>
                 </div>
 
                 <div className='flex items-center space-x-2'>
-                    <div className='w-3 h-3 bg-gradient-to-r from-slate-400 to-slate-500 rounded-full'></div>
-                    <div className='text-sm text-slate-600 dark:text-slate-400'>
+                    <div className='w-3 h-3 rounded-full' style={{ backgroundColor: 'var(--chart-2)' }}></div>
+                    <div className='text-sm' style={{ color: 'var(--muted-foreground)' }}>
                         <span>Expenses </span>
                     </div>
                 </div>
@@ -51,30 +51,31 @@ const RevenueChart = () => {
 
                     <CartesianGrid 
                     strokeDasharray="3 3" 
-                    stroke='#e2e8f0'
+                    style={{ stroke: 'var(--border)' }}
                     opacity={0.2} />
 
                     <XAxis 
                     dataKey="month"
-                    stroke='#64748b' 
+                    style={{ fill: 'var(--muted-foreground)' }}
                     fontSize={12} 
                     tickLine={false} 
                     axisLine={false} />
 
                     <YAxis 
-                    stroke='#64748b' 
+                    style={{ fill: 'var(--muted-foreground)' }}
                     fontSize={12} 
                     tickLine={false} 
-                    axisLine={false} 
+                    axisLine={false}
                     tickFormatter={(value) => `$${value / 1000}k`}/>
 
                     <Tooltip 
                     contentStyle={{ 
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', 
-                        border: 'none' ,
+                        backgroundColor: 'var(--card)', 
+                        border: '1px solid var(--border)',
                         borderRadius: '12px',
-                        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)'}}
-                        itemStyle={{ color: '#64748b' }}
+                        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.1)',
+                        color: 'var(--foreground)'}}
+                        itemStyle={{ color: 'var(--foreground)' }}
 
                         formatter={(value,name) => [`$${value.toLocaleString()}`, name]}
                     />
@@ -94,12 +95,12 @@ const RevenueChart = () => {
 
                     <defs>
                         <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#3b82f6"  />
-                            <stop offset="100%" stopColor="#8b5cf6" />
+                            <stop offset="0%" style={{ stopColor: 'var(--chart-1)' }} />
+                            <stop offset="100%" style={{ stopColor: 'var(--primary)' }} />
                         </linearGradient>
                         <linearGradient id="expensesGradient" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#94a3b8"  />
-                            <stop offset="100%" stopColor="#64748b"  />
+                            <stop offset="0%" style={{ stopColor: 'var(--chart-2)' }} />
+                            <stop offset="100%" style={{ stopColor: 'var(--muted-foreground)' }} />
                         </linearGradient>
                     </defs>
                 </ReBarChart>
