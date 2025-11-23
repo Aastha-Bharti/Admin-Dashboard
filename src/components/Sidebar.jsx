@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { FaRegUser } from "react-icons/fa6";
-
+import {motion} from "motion/react"
 const menuItems = [
   { id: "dashboard", icon: LayoutDashboard, label: "Dashboard", badge: "New" },
   {
@@ -69,12 +69,16 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
   };
 
   return (
-    <div
+    <motion.div
       className={`
         flex flex-col relative z-10
-        transition-[width] duration-500 ease-in-out
-        ${collapsed ? "w-[5.5rem]" : "w-72"}
+       
       `}
+      animate={{ width: collapsed ? "5.5rem" : "18rem" }}
+      transition={{
+        duration: 0.5,
+        ease:"easeInOut"
+      }}
       style={{
         backgroundColor: "var(--sidebar)",
         borderRight: "1px solid var(--sidebar-border)",
@@ -294,7 +298,7 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
