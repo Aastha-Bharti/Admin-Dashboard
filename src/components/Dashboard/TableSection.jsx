@@ -86,7 +86,7 @@ const TableSection = () => {
   return (
     <div className='space-y-6'>
         {/* recent orders */}
-        <div className='shadow rounded-lg p-6 backdrop-blur-lg overflow-hidden rounded-b-2xl' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
+        <div className='shadow p-6 backdrop-blur-lg overflow-hidden rounded-xl' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='p-5' style={{ borderBottom: '1px solid var(--border)' }}>
             <div className='flex items-center justify-between'>
                 <div>

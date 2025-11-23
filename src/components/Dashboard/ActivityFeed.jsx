@@ -57,7 +57,7 @@ const activities = [
 
 const ActivityFeed = () => {
   return (
-    <div className='backdrop-blur-xl shadow-lg rounded-b-2xl' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
+    <div className='backdrop-blur-xl shadow-lg rounded-xl' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='p-6' style={{ borderBottom: '1px solid var(--border)' }}>
             <div>
                 <h3 className='text-lg font-black' style={{ color: 'var(--foreground)' }}>ActivityFeed</h3>

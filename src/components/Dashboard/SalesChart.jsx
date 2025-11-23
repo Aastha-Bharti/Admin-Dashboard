@@ -18,7 +18,7 @@ const SalesChart = () => {
     ]
 
   return (
-    <div className='backdrop-blur-xl rounded-b-2xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
+    <div className='backdrop-blur-xl rounded-xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='mb-4'>
             <h3 className='text-xl font-bold' style={{ color: 'var(--foreground)' }}>Sales by Category</h3>
             <p className='text-sm' style={{ color: 'var(--muted-foreground)' }}>Production Distribution</p>

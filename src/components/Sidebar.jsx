@@ -133,8 +133,8 @@ const Sidebar = ({ collapsed, onToggle, currentPage, onPageChange }) => {
           return (
             <div key={item.id} className="mb-1">
               <button
-                className={`w-full flex items-center justify-between p-2 rounded-xl transition-all duration-300
-                  ${isActive ? "text-white shadow-lg" : "hover:opacity-80"}`}
+                className={`w-full flex items-center justify-between p-2 rounded-xl transition-all duration-300 hover:bg-neutral-500 cursor-pointer  hover:text-sidebar-foreground  
+                  ${isActive ? "text-white shadow-lg" : " hover:text-sidebar-foreground"}`}
                 style={
                   isActive
                     ? {

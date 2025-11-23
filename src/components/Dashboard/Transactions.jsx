@@ -42,23 +42,23 @@ const transactions = [
 const Transactions = () => {
   return (
     <div
-      className="backdrop-blur-xl shadow-lg rounded-b-2xl"
+      className="backdrop-blur-xl shadow-lg rounded-xl"
       style={{ backgroundColor: "var(--card)", border: "1px solid var(--border)" }}
     >
       {/* Header */}
       <div
-        className="p-6 flex items-center justify-between"
+        className="p-4  flex items-center justify-between"
         style={{ borderBottom: "1px solid var(--border)" }}
       >
         <div>
           <h3
-            className="text-lg font-black flex items-center gap-2"
+            className="text-xl font-semibold flex items-center gap-2 ml-4"
             style={{ color: "var(--foreground)" }}
           >
             <CreditCard className="w-5 h-5" style={{ color: "var(--primary)" }} />
             Transactions
           </h3>
-          <p className="text-sm" style={{ color: "var(--muted-foreground)" }}>
+          <p className="text-sm ml-4" style={{ color: "var(--muted-foreground)" }}>
             Recent transaction history
           </p>
         </div>

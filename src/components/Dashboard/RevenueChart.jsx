@@ -19,7 +19,7 @@ const RevenueChart = () => {
 
 
   return (
-    <div className='backdrop-blur-xl rounded-b-2xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
+    <div className='backdrop-blur-xl rounded-xl p-6 shadow-lg' style={{ backgroundColor: 'var(--card)', border: '1px solid var(--border)' }}>
         <div className='flex items-center justify-between mb-6'>
             <div>
                 <h3 className='text-xl font-bold' style={{ color: 'var(--foreground)' }}>Revenue Chart</h3>
